@@ -4,7 +4,6 @@ Check Twitter update for romantic messages (@romanticmsgs) and SMS them to your 
 - `Tweepy` to pull message from Twitter (`python-twitter` does not work when hosted on Google App Engine)
 - `Twilio` to send SMS message
 - Script is hosted on Google App Engine with a cron job
-- 
 
 # How to Deploy
 
