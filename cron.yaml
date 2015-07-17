@@ -1,0 +1,4 @@
+cron:
+- description: check twitter every 2 hours and send message
+  url: /
+  schedule: every 2 hours
