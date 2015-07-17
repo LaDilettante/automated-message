@@ -1,9 +1,10 @@
 # automated-message
-Pull romantic messages from Twitter (@romanticmsgs) and SMS them to your loved ones
+Check Twitter update for romantic messages (@romanticmsgs) and SMS them to your loved ones
 
 - `Tweepy` to pull message from Twitter (`python-twitter` does not work when hosted on Google App Engine)
 - `Twilio` to send SMS message
 - Script is hosted on Google App Engine with a cron job
+- 
 
 # How to Deploy
 
@@ -39,9 +40,13 @@ myCellPhone = '+12229993333'
 2. Follow [GAE's tutorial](https://cloud.google.com/appengine/docs/python/gettingstartedpython27/uploading) on how to upload your application. TL;DR: `appcfg.py -A PROJECT_NAME update automated-message`
 3. You can go to http://console.developers.google.com to monitor your application
 
+# Configuration
+1. Change the Twitter source: In `messenger.py`, you can change `screen_name = 'romanticmsgs'screen_name = 'romanticmsgs'` to use any other Twitter user as source
+2. Change the frequency of checking Twitter for updates in `cron.yaml`
+3. Change the hours NOT to send message: In `messenger.py` > `# Does not send during sleep hours`
+
 # Troubleshoot
 
-1. 
 > Failed to send request: The Socket API will be enabled for this application once billing has been enabled in the admin console.
 
 We need to enable billing for our GAE's app for `Tweepy` and `Twilio` API to work, as follows. In http://console.developers.google.com, 
