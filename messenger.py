@@ -21,17 +21,11 @@ class Messenger(webapp2.RequestHandler):
     def send_message(self):
         from passwords import consumer_key, consumer_secret, access_token, access_token_secret, \
             ACCOUNT_SID, AUTH_TOKEN, myTwilioNumber, myCellPhone
-            
+
         # Scrape Twitter
-        consumer_key = consumer_key
-        consumer_secret = consumer_secret
-        access_token = access_token
-        access_token_secret = access_token_secret
-        
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_token, access_token_secret)
         api = tweepy.API(auth)
-
 
         screen_name = 'romanticmsgs'
         latest_tweet = api.user_timeline(screen_name = screen_name, count=1)[0]
